@@ -1,5 +1,5 @@
 {
-  "name": "helm-typescript",
+  "name": "@nthings/helm-ts",
   "version": "0.0.1",
   "description": "A node client for interacting with helm based on the helm cli.",
   "main": "dist/index.js",

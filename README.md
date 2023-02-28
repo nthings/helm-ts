@@ -24,6 +24,17 @@ await helm.repo.add('bitnami', 'https://charts.bitnami.com/bitnami');
 await helm.install('my-mongodb-release', 'bitnami/mongodb');
 ```
 
+### Uninstall a Helm Chart
+`With Helm CLI`
+```bash
+$ helm uninstall my-mongodb-release
+```
+
+`With helm-ts`
+```js
+await helm.uninstall('my-mongodb-release');
+```
+
 ### List Helm releases
 
 `With Helm CLI:`
@@ -50,6 +61,20 @@ const releases: Release[] = await helm.list();
  *    }
  *  ]
  */
+```
+
+### Rollback a release
+Rollbacks a release to the previous revision. It can be used with `helm.list()` to fetch available release names.
+
+`With Helm CLI:`
+```
+bash
+$ helm rollback <release-name>
+```
+
+`With helm-ts`
+```js
+await helm.rollback("<release-name>");
 ```
 
 **Note:**

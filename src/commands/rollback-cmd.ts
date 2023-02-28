@@ -20,7 +20,8 @@ const buildHelmRollbackCmd = (name:string, flags: RollbackFlags = {}) => {
 const rollback = async (name: string, flags: RollbackFlags = {}): Promise<String> => {
   const command = buildHelmRollbackCmd(name, flags);
   const stdout = await runCommand(command);
-  return JSON.parse(stdout);
+  console.log(stdout);
+  return stdout;
 };
 
 export default rollback;
